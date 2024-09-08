@@ -1,0 +1,10 @@
+const success = (msg, data) => {
+  // 规范响应格式（成功）
+  ctx.setHeader("Content-Type", "application/json");
+  return JSON.stringify({ code: 1, message: msg, data: data });
+};
+const fail = (msg, error) => {
+  // 规范响应格式（失败）
+  ctx.setHeader("Content-Type", "application/json");
+  return JSON.stringify({ code: 0, message: msg, error: error });
+};
